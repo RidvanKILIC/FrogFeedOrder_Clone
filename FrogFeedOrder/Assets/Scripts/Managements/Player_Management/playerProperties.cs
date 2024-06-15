@@ -4,7 +4,6 @@ using UnityEngine;
 
 public static class  playerProperties
 {
-    static int currentLevelIndex;
     static int playerPoint;
     public static int getPlayerPoint()
     {

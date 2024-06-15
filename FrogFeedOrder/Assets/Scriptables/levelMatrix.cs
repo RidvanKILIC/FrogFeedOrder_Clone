@@ -1,13 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+[CreateAssetMenu(fileName = "Level Matrix", menuName = "Level Matrices/New Level Matrix", order = 1)]
+public class levelMatrix : ScriptableObject
 {
-    [SerializeField] private levelManager _levelManager;
-
-    // The list to hold GameObjects in a 5x5 grid
-    [SerializeField] private List<GameObject> positionObjects = new List<GameObject>(25);
-   
+    public List<levelMatrixCell> _levelMatrix = new List<levelMatrixCell>(25);
     // Method to get the index in the flat list from row and column
     private int GetIndex(int row, int col)
     {
@@ -15,12 +12,12 @@ public class GameManager : MonoBehaviour
     }
 
     // Method to add a GameObject to the grid at specified row and column
-    public void AddGameObject(GameObject obj, int row, int col)
+    public void AddGameObject(levelMatrixCell obj, int row, int col)
     {
         int index = GetIndex(row, col);
         if (index >= 0 && index < 25) // Ensure index is within bounds
         {
-            positionObjects[index] = obj;
+            _levelMatrix[index] = obj;
         }
         else
         {
@@ -29,12 +26,12 @@ public class GameManager : MonoBehaviour
     }
 
     // Method to retrieve the GameObject at specified row and column
-    public GameObject GetGameObject(int row, int col)
+    public levelMatrixCell GetGameObject(int row, int col)
     {
         int index = GetIndex(row, col);
         if (index >= 0 && index < 25) // Ensure index is within bounds
         {
-            return positionObjects[index];
+            return _levelMatrix[index];
         }
         else
         {
@@ -42,5 +39,4 @@ public class GameManager : MonoBehaviour
             return null;
         }
     }
-
 }
