@@ -38,6 +38,11 @@ namespace _itemProperties
         public Space _rotationSprite;
     }
     [System.Serializable]
+    public struct _itemPrefab{
+        public _type itemType;
+        public GameObject itemPrefab;
+    }
+    [System.Serializable]
     public enum _color
     {
         Blue,

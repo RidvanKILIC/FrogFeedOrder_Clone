@@ -10,24 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6d81e4406a62a4448aec9dd97d0330c8, type: 3}
-  m_Name: 0,1
+  m_Name: 0,4
   m_EditorClassIdentifier: 
   cellObjects:
   - cellObj:
-      cellColor: 0
+      cellColor: 4
     itemObj:
-      itemColor: 0
-      itemType: 0
-      itemRotation: 0
+      itemColor: 4
+      itemType: 3
+      itemRotation: 2
   - cellObj:
       cellColor: 0
     itemObj:
       itemColor: 0
-      itemType: 0
-      itemRotation: 0
-  - cellObj:
-      cellColor: 0
-    itemObj:
-      itemColor: 0
-      itemType: 0
-      itemRotation: 0
+      itemType: 2
+      itemRotation: 2

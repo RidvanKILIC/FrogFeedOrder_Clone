@@ -10,6 +10,6 @@ namespace _levelProperties
        public int numberOfMovesLimit;
        public bool isUnlocked;
        public Color levelBGColor;
-        public levelMatrix matrix;
+       public levelMatrix matrix;
     }
 }

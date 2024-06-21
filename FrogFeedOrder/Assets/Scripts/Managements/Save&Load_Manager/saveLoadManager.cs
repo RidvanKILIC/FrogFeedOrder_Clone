@@ -5,9 +5,17 @@ using UnityEngine;
 public class saveLoadManager : MonoBehaviour
 {
     [SerializeField] levelManager _levelManager;
-    private void OnEnable()
+    private void Awake()
     {
+        if (_levelManager.updateJson && _levelManager.levelItemsList.Count>0)
+        {
+            GameInfos.setcurrentlevelItemsList(_levelManager.levelItemsList,false);
+            SaveGameState();
+        }
+          
+
         LoadGameState();
+        
         if (GameInfos.getcurrentlevelItemsList()!= null && GameInfos.getcurrentlevelItemsList().Count > 0)
         {
             _levelManager.levelItemsList = GameInfos.getcurrentlevelItemsList();
@@ -15,7 +23,7 @@ public class saveLoadManager : MonoBehaviour
         }
         else
         {
-            GameInfos.setcurrentlevelItemsList(_levelManager.levelItemsList);
+            GameInfos.setcurrentlevelItemsList(_levelManager.levelItemsList,false);
             Debug.Log("GameInfos' Level List Updated");
         }
         SaveGameState();
@@ -35,5 +43,6 @@ public class saveLoadManager : MonoBehaviour
             SaveGameState();
         }
         GameInfos.LoadGame(filePath);
+        //Debug.Log("Loading Game");
     }
 }

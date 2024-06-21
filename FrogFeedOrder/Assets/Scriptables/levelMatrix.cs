@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -23,6 +24,11 @@ public class levelMatrix : ScriptableObject
         {
             Debug.LogError("Invalid index for adding GameObject to positionObjects list.");
         }
+    }
+
+    internal IEnumerable<object> elementAt()
+    {
+        throw new NotImplementedException();
     }
 
     // Method to retrieve the GameObject at specified row and column
